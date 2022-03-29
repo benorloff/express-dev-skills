@@ -1,14 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const Skill = require('../models/skill');
 
-app.get('/skills', function(req, res) {
+router.get('/', function(req, res) {
   res.render('skills/index', {
-    todos: skillDb.getAll()
+    todos: Skill.getAll()
   });
 });
 
