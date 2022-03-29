@@ -16,6 +16,7 @@
                 <th>ID #</th>
                 <th>Skill Name</th>
                 <th>Difficulty</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,11 @@
                     <td><a href="/skills/<%= s.id %>"><%= s.id %></a></td>
                     <td><%= s.skill %></td>
                     <td><%= s.difficulty %></td>
+                    <td>
+                        <form action="/skills/<%= s.id %>?_method=DELETE" method="POST">
+                            <button type="submit">DELETE</button>
+                        </form>
+                    </td>
                 </tr>
               <% }); %>
         </tbody>
