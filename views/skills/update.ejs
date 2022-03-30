@@ -9,14 +9,14 @@
 </head>
 <body class="container">
     <h1>Update Skill</h1>
-    <form action="/skills/:id/update?_method=PUT" method="POST" autocomplete="off" class="form-inline">
+    <form action="/skills?_method=PUT" method="POST" autocomplete="off" class="form-inline">
         <div class="form-group">
             <label for="skill">Name</label>
-            <input type="text" class="form-control" name="skill">
+            <input type="text" class="form-control" name="skill" value="<%= skill.name %> ">
         </div>
         <div class="form-group">
             <label for="difficulty">Difficulty</label>
-            <select class="form-control" name="difficulty">
+            <select class="form-control" name="difficulty" value="<%= skill.difficulty %> ">
                 <option>Easy</option>
                 <option>Medium</option>
                 <option>Hard</option>

@@ -40,6 +40,6 @@ module.exports = {
     console.log(req.params.id);
     console.log(req.body.skill);
     console.log(req.body.difficulty);
-    Skill.updateOne(req.body.skill, req.body.difficulty);
-    res.render('skills/update')
+    Skill.updateOne(req.params.id);
+    res.render('skills/:id/update')
   }
