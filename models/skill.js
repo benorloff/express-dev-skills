@@ -14,6 +14,7 @@ const skills = [
     getOne,
     create,
     deleteOne
+    // updateOne
   };
 
   function create(skill, difficulty) {
@@ -34,4 +35,9 @@ const skills = [
     const idx = skills.findIndex(skills => skills.id === parseInt(id));
     skills.splice(idx, 1);
   }
+
+  // function updateOne(id, skill, difficulty) {
+  //   const idx = skills.findIndex(skills => skills.id === parseInt(id));
+  //   skills.splice(idx, 1, `{id: ${skills.id}, skill: ${skill}, difficulty: ${difficulty}}`)
+  // }
  
