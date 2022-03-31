@@ -6,7 +6,8 @@ module.exports = {
     new: newSkill,
     create,
     delete: deleteSkill,
-    update: updateSkill
+    edit,
+    update
   };
 
   function create(req, res) {
@@ -36,10 +37,13 @@ module.exports = {
     res.redirect('/skills')
   }
 
-  function updateSkill(req, res) {
-    console.log(req.params.id);
-    console.log(req.body.skill);
-    console.log(req.body.difficulty);
-    Skill.updateOne(req.params.id);
-    res.render('skills/:id/update')
+  function edit(req, res) {
+    res.render('skills/edit', {
+      skill: Skill.getOne(req.params.id)
+    })
+  }
+
+  function update(req, res) {
+    Skill.updateOne(req.params.id, req.body.skill, req.body.difficulty);
+    res.redirect('/skills')
   }

@@ -38,6 +38,7 @@ const skills = [
 
   function updateOne(id, skill, difficulty) {
     const idx = skills.findIndex(skills => skills.id === parseInt(id));
-    skills.splice(idx, 1, `{id: ${skills.id}, skill: ${skill}, difficulty: ${difficulty}}`)
+    skills[idx].skill = skill;
+    skills[idx].difficulty = difficulty;
   }
  
